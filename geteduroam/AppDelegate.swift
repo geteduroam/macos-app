@@ -19,10 +19,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let string = try! String(contentsOfFile: filename, encoding: String.Encoding.utf8)
         eapObject = EAP(XMLString: string)
         
-        // Load eapView Scene
-        var eapView: NSWindow? = nil
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"),bundle: nil)
-        var controller: NSViewController
+        let mainStoryboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
+        let initialViewController : NSViewController = mainStoryboard.instantiateController(identifier: "EAPView")
         
         // Filter view connection with client certificate or CA certificate
         if(eapObject?.EAPIdentityProvider.AuthenticationMethods.AuthenticationMethod.first?.ClientSideCredential.ClientCertificate != nil){
