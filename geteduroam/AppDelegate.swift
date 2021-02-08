@@ -21,9 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let mainStoryboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
         let initialViewController : NSViewController = mainStoryboard.instantiateController(identifier: "EAPView")
-        self.window = NSWindow(frame: NSScreen.main, )
-        self.window?.rootViewController = initialViewController
-               self.window?.makeKeyAndVisible()
         
         print("Data extract")
         print("----------------")
